@@ -7,6 +7,7 @@ public class Conexion {
     public static Connection cn = null;
     
     public static Connection conectar() throws Exception{
+        String user="";
         return cn;
     }
     
