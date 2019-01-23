@@ -1,6 +1,6 @@
 package model;
 
-public class Ubigeo {
+public class UbigeoM {
     private String idUbi;
     private String dptoUbi;
     private String provUbi;
