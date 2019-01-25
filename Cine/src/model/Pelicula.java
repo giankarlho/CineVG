@@ -8,6 +8,7 @@ public class Pelicula {
     private String durPeli;
     private String tipPeli;
     private String claPeli;
+    //hola
     
     public int getIdPeli() {
         return idPeli;
