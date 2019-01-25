@@ -4,14 +4,14 @@ import java.io.Serializable;
 import dao.VentaD;
 import java.util.List;
 import javax.annotation.PostConstruct;
-import model.VentaM;
+import model.Venta;
 
 public class VentaC implements Serializable{
     
-    private VentaM venta = new VentaM();
-    private VentaM selecteVenta;
-    private List<VentaM> listVenta;
-    private List<VentaM> listarPorVenta;
+    private Venta venta = new Venta();
+    private Venta selecteVenta;
+    private List<Venta> listVenta;
+    private List<Venta> listarPorVenta;
     
 
     @PostConstruct
@@ -47,7 +47,7 @@ public class VentaC implements Serializable{
     }
     
    private void limpiarVenta() {
-        venta = new VentaM();
+        venta = new Venta();
     }
     public void modificarVenta() {
         VentaD dao;
@@ -73,35 +73,35 @@ public class VentaC implements Serializable{
      }
     
 
-    public VentaM getVenta() {
+    public Venta getVenta() {
         return venta;
     }
 
-    public void setVenta(VentaM venta) {
+    public void setVenta(Venta venta) {
         this.venta = venta;
     }
 
-    public VentaM getSelecteVenta() {
+    public Venta getSelecteVenta() {
         return selecteVenta;
     }
 
-    public void setSelecteVenta(VentaM selecteVenta) {
+    public void setSelecteVenta(Venta selecteVenta) {
         this.selecteVenta = selecteVenta;
     }
 
-    public List<VentaM> getListVenta() {
+    public List<Venta> getListVenta() {
         return listVenta;
     }
 
-    public void setListVenta(List<VentaM> listVenta) {
+    public void setListVenta(List<Venta> listVenta) {
         this.listVenta = listVenta;
     }
 
-    public List<VentaM> getListarPorVenta() {
+    public List<Venta> getListarPorVenta() {
         return listarPorVenta;
     }
 
-    public void setListarPorVenta(List<VentaM> listarPorVenta) {
+    public void setListarPorVenta(List<Venta> listarPorVenta) {
         this.listarPorVenta = listarPorVenta;
     }
 

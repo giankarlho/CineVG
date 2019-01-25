@@ -6,7 +6,7 @@
 package dao;
 
 import java.util.List;
-import model.VentaM;
+import model.Venta;
 
 /**
  *
@@ -14,19 +14,19 @@ import model.VentaM;
  */
 public class VentaD {
 
-    public List<VentaM> listarVenta() {
+    public List<Venta> listarVenta() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void guardarVenta(VentaM venta) {
+    public void guardarVenta(Venta venta) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void modificarVenta(VentaM selecteVenta) {
+    public void modificarVenta(Venta selecteVenta) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void eliminarSala(VentaM selecteVenta) {
+    public void eliminarSala(Venta selecteVenta) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

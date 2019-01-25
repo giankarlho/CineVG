@@ -6,7 +6,7 @@
 package dao;
 
 import java.util.List;
-import model.UbigeoM;
+import model.Ubigeo;
 
 /**
  *
@@ -14,19 +14,19 @@ import model.UbigeoM;
  */
 public class UbigeoD {
 
-    public List<UbigeoM> listarUbigeo() {
+    public List<Ubigeo> listarUbigeo() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void guardarUbigeo(UbigeoM ubigeo) {
+    public void guardarUbigeo(Ubigeo ubigeo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void modificarUbigeo(UbigeoM selecteUbigeo) {
+    public void modificarUbigeo(Ubigeo selecteUbigeo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void eliminarUbigeo(UbigeoM selecteUbigeo) {
+    public void eliminarUbigeo(Ubigeo selecteUbigeo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

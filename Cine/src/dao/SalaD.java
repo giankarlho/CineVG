@@ -6,24 +6,24 @@
 package dao;
 
 import java.util.List;
-import model.SalaM;
+import model.Sala;
 
 
 public class SalaD {
 
-    public List<SalaM> listarSala() {
+    public List<Sala> listarSala() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void guardarSala(SalaM sala) {
+    public void guardarSala(Sala sala) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void modificarSala(SalaM selecteSala) {
+    public void modificarSala(Sala selecteSala) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void eliminarSala(SalaM selecteSala) {
+    public void eliminarSala(Sala selecteSala) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

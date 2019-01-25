@@ -4,14 +4,14 @@ import java.io.Serializable;
 import dao.UbigeoD;
 import java.util.List;
 import javax.annotation.PostConstruct;
-import model.UbigeoM;
+import model.Ubigeo;
 
 public class UbigeoC implements Serializable{
     
-    private UbigeoM ubigeo = new UbigeoM();
-    private UbigeoM selecteUbigeo;
-    private List<UbigeoM> listUbigeo;
-    private List<UbigeoM> listarPorUbigeo;
+    private Ubigeo ubigeo = new Ubigeo();
+    private Ubigeo selecteUbigeo;
+    private List<Ubigeo> listUbigeo;
+    private List<Ubigeo> listarPorUbigeo;
     
 
     @PostConstruct
@@ -47,7 +47,7 @@ public class UbigeoC implements Serializable{
     }
     
    private void limpiarUbigeo() {
-        ubigeo = new UbigeoM();
+        ubigeo = new Ubigeo();
     }
     public void modificarUbigeo() {
         UbigeoD dao;
@@ -72,35 +72,35 @@ public class UbigeoC implements Serializable{
         }
      }
 
-    public UbigeoM getUbigeo() {
+    public Ubigeo getUbigeo() {
         return ubigeo;
     }
 
-    public void setUbigeo(UbigeoM ubigeo) {
+    public void setUbigeo(Ubigeo ubigeo) {
         this.ubigeo = ubigeo;
     }
 
-    public UbigeoM getSelecteUbigeo() {
+    public Ubigeo getSelecteUbigeo() {
         return selecteUbigeo;
     }
 
-    public void setSelecteUbigeo(UbigeoM selecteUbigeo) {
+    public void setSelecteUbigeo(Ubigeo selecteUbigeo) {
         this.selecteUbigeo = selecteUbigeo;
     }
 
-    public List<UbigeoM> getListUbigeo() {
+    public List<Ubigeo> getListUbigeo() {
         return listUbigeo;
     }
 
-    public void setListUbigeo(List<UbigeoM> listUbigeo) {
+    public void setListUbigeo(List<Ubigeo> listUbigeo) {
         this.listUbigeo = listUbigeo;
     }
 
-    public List<UbigeoM> getListarPorUbigeo() {
+    public List<Ubigeo> getListarPorUbigeo() {
         return listarPorUbigeo;
     }
 
-    public void setListarPorUbigeo(List<UbigeoM> listarPorUbigeo) {
+    public void setListarPorUbigeo(List<Ubigeo> listarPorUbigeo) {
         this.listarPorUbigeo = listarPorUbigeo;
     }
 

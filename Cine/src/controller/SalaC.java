@@ -5,14 +5,14 @@ import java.io.Serializable;
 import dao.SalaD;
 import java.util.List;
 import javax.annotation.PostConstruct;
-import model.SalaM;
+import model.Sala;
 
 public class SalaC implements Serializable{
     
-    private SalaM sala = new SalaM();
-    private SalaM selecteSala;
-    private List<SalaM> listSala;
-    private List<SalaM> listarPorSala;
+    private Sala sala = new Sala();
+    private Sala selecteSala;
+    private List<Sala> listSala;
+    private List<Sala> listarPorSala;
     
 
     @PostConstruct
@@ -58,7 +58,7 @@ public class SalaC implements Serializable{
     }
 
     private void limpiarSala() {
-        sala = new SalaM();
+        sala = new Sala();
     }
 
     public void eliminarSala() throws Exception {
@@ -74,35 +74,35 @@ public class SalaC implements Serializable{
 
   
 
-    public SalaM getSala() {
+    public Sala getSala() {
         return sala;
     }
 
-    public void setSala(SalaM sala) {
+    public void setSala(Sala sala) {
         this.sala = sala;
     }
 
-    public SalaM getSelecteSala() {
+    public Sala getSelecteSala() {
         return selecteSala;
     }
 
-    public void setSelecteSala(SalaM selecteSala) {
+    public void setSelecteSala(Sala selecteSala) {
         this.selecteSala = selecteSala;
     }
 
-    public List<SalaM> getListSala() {
+    public List<Sala> getListSala() {
         return listSala;
     }
 
-    public void setListSala(List<SalaM> listSala) {
+    public void setListSala(List<Sala> listSala) {
         this.listSala = listSala;
     }
 
-    public List<SalaM> getListarPorSala() {
+    public List<Sala> getListarPorSala() {
         return listarPorSala;
     }
 
-    public void setListarPorSala(List<SalaM> listarPorSala) {
+    public void setListarPorSala(List<Sala> listarPorSala) {
         this.listarPorSala = listarPorSala;
     }
 

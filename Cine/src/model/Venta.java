@@ -1,6 +1,6 @@
 package model;
 
-public class VentaM {
+public class Venta {
     private int idVta;
     private int idClie;
     private int idPel;

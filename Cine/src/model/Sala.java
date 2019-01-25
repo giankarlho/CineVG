@@ -1,5 +1,5 @@
 package model;
 
-public class SalaM {
+public class Sala {
     
 }
