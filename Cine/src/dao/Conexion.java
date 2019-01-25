@@ -8,6 +8,9 @@ public class Conexion {
     
     public static Connection conectar() throws Exception{
         String user="";
+        String pwd = "";
+        String url ="";
+        String driver ="";
         return cn;
     }
     

@@ -106,10 +106,6 @@ public class SalaC implements Serializable{
         this.listarPorSala = listarPorSala;
     }
 
-  
-
- 
-
     private void lstEmpresa() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
