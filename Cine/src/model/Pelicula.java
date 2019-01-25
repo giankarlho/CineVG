@@ -9,15 +9,6 @@ public class Pelicula {
     private String tipPeli;
     private String claPeli;
     
-    public Pelicula(int idPeli, String genPeli, String idiPeli, String durPeli, String tipPeli, String claPeli) {
-        this.idPeli = idPeli;
-        this.genPeli = genPeli;
-        this.idiPeli = idiPeli;
-        this.durPeli = durPeli;
-        this.tipPeli = tipPeli;
-        this.claPeli = claPeli;
-    }
-
     public int getIdPeli() {
         return idPeli;
     }
