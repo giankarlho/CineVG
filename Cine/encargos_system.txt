@@ -1,0 +1,6 @@
+Cliente: Carlos 
+Pelicula: Dooglas
+Sala:Diego
+Venta:Marcos-Jesus
+Personal: Alexander
+detalles: Casas - Arian
