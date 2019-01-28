@@ -1,0 +1,4 @@
+botones: 64x64px
+JFrame:  910x610
+JPanels: 900x600
+jpBotones:170, 560
