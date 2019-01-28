@@ -26,7 +26,7 @@ public class Conexion {
             System.out.println("Error en la conexión: " + e.getMessage());
         }
         return cnx;
-        //e aa ddsfsheol
+ 
     }
 
     public static void cerrarCnx() throws SQLException {
