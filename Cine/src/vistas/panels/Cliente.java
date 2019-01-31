@@ -82,7 +82,7 @@ public class Cliente extends javax.swing.JPanel {
                 .addComponent(jButton2)
                 .addGap(68, 68, 68)
                 .addComponent(jButton3)
-                .addContainerGap(302, Short.MAX_VALUE))
+                .addContainerGap(305, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jpCRUDLayout = new javax.swing.GroupLayout(jpCRUD);
@@ -90,7 +90,7 @@ public class Cliente extends javax.swing.JPanel {
         jpCRUDLayout.setHorizontalGroup(
             jpCRUDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpCRUDLayout.createSequentialGroup()
-                .addContainerGap(720, Short.MAX_VALUE)
+                .addContainerGap(723, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
