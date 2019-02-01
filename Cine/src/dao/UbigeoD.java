@@ -8,10 +8,6 @@ package dao;
 import java.util.List;
 import model.Ubigeo;
 
-/**
- *
- * @author Usuario Alumno
- */
 public class UbigeoD {
 
     public List<Ubigeo> listarUbigeo() {

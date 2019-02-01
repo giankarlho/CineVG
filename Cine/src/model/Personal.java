@@ -11,6 +11,7 @@ public class Personal {
     private String sexPer;
     private String usuPer;
     private String pwdPer;
+    private String idUbi;
 
     public int getIdPer() {
         return idPer;
@@ -82,6 +83,14 @@ public class Personal {
 
     public void setPwdPer(String pwdPer) {
         this.pwdPer = pwdPer;
+    }
+
+    public String getIdUbi() {
+        return idUbi;
+    }
+
+    public void setIdUbi(String idUbi) {
+        this.idUbi = idUbi;
     }
     
     
