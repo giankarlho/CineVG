@@ -28,6 +28,16 @@ public class Conexion {
         return cnx;
  
     }
+    
+    public static Connection getCnx() {
+        return cnx;
+    }
+
+    public static void setCnx(Connection cnx) {
+        Conexion.cnx = cnx;
+    }
+    
+    
 
     public static void cerrarCnx() throws SQLException {
         if(cnx!=null){
