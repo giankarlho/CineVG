@@ -10,7 +10,6 @@ public interface ICliente {
     void modificar(Cliente cliente) throws Exception;
 
     void eliminar(Cliente cliente) throws Exception;
-
-    List<Cliente> listar();
+ 
 
 }

@@ -1,73 +1,69 @@
 package controller;
 
 import dao.ClienteImpl;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
+import javax.swing.table.DefaultTableModel;
 import model.Cliente;
-
+import vistas.panels.ClienteView;
 
 public class ClienteC {
-    
-    private Cliente cliente = new Cliente();
-    private List<Cliente> lstCliente;
-    
-    
-    @PostConstruct
-    public void inicio(){
-        try {
-            listarCliente();
-        } catch (Exception ex) {
-            Logger.getLogger(ClienteC.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
+    Cliente cliente = new Cliente();
+    List<Cliente> lstCliente;
+    ClienteImpl dao;
+
+    public ClienteC() {
+
     }
-    
-    
+
     public void registrarCliente() throws Exception {
-        ClienteImpl dao;
+        dao = new ClienteImpl();
         try {
-            dao = new ClienteImpl();
             dao.registrar(cliente);
-            listarCliente();
+//            listarCliente();
         } catch (Exception e) {
-            throw e;
+            System.out.println("Error en registrarCliente ClienteC " + e.getMessage());
         }
     }
-    
+
     public void eliminarCliente() throws Exception {
         ClienteImpl dao;
         try {
             dao = new ClienteImpl();
             dao.eliminar(cliente);
-            listarCliente();
+
         } catch (Exception e) {
             throw e;
         }
     }
-    
-    public void listarCliente() throws Exception {
-        ClienteImpl dao;
-        try {
-            dao = new ClienteImpl();
-            lstCliente = dao.listar();
-        } catch (Exception e) {
-            throw e;
-        }
-    }
-    
+
     public void modificarCliente() throws Exception {
         ClienteImpl dao;
         try {
             dao = new ClienteImpl();
             dao.modificar(cliente);
-            listarCliente();
         } catch (Exception e) {
             throw e;
         }
     }
-    
-    public void limpiar(){
+
+    public void variables() {
+        cliente.setNomCli(ClienteView.txtNom.getText());
+        cliente.setApeCli(ClienteView.txtApe.getText());
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
+        cliente.setNacCli(Date.valueOf(formatoFecha.format(ClienteView.jdNac.getDate())));
+    }
+
+    public void limpiar() {
+        ClienteView.txtApe.setText("");
+        ClienteView.txtNom.setText("");
+    }
+
+    // Generado por Java
+    public void limpiarModelo() {
         cliente = new Cliente();
     }
 
@@ -86,6 +82,5 @@ public class ClienteC {
     public void setLstCliente(List<Cliente> lstCliente) {
         this.lstCliente = lstCliente;
     }
-    
-    
+
 }

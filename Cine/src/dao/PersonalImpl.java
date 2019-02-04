@@ -12,10 +12,9 @@ public class PersonalImpl extends Conexion implements IPersonal {
 
     @Override
     public void registrar(Personal personal) throws Exception {
-        try {
-            this.conectar();
+        try {            
             String sql = "INSERT INTO PERSONAL (NomPer,ApePer,DniPer,DirPer,TipPer,SexPer,UsuPer,PwdPer,IdUbi)";
-            PreparedStatement ps = this.getCnx().prepareStatement(sql);
+            PreparedStatement ps = this.conectar().prepareStatement(sql);
             ps.setString(1, personal.getNomPer());
             ps.setString(2, personal.getApePer());
             ps.setString(3, personal.getDniPer());
@@ -34,10 +33,9 @@ public class PersonalImpl extends Conexion implements IPersonal {
 
     @Override
     public void modificar(Personal personal) throws Exception {
-        try {
-            this.conectar();
+        try {            
             String sql = "UPDATE PERSONAL SET NomPer=?,ApePer=?,DniPer=?,DirPer=?,TipPer=?,SexPer=?,UsuPer=?,PwdPer=?,IdUbi=?  WHERE IdPer = ?";
-            PreparedStatement ps = this.getCnx().prepareStatement(sql);
+            PreparedStatement ps = this.conectar().prepareStatement(sql);
             ps.setString(1, personal.getNomPer());
             ps.setString(2, personal.getApePer());
             ps.setString(3, personal.getDniPer());
@@ -59,7 +57,7 @@ public class PersonalImpl extends Conexion implements IPersonal {
         try {
             this.conectar();
             String sql = "DELETE FROM PERSONAL WHERE IdPer = ?";
-            PreparedStatement ps = this.getCnx().prepareStatement(sql);
+            PreparedStatement ps = this.conectar().prepareStatement(sql);
             ps.setInt(1, personal.getIdPer());
             ps.executeUpdate();
         } catch (Exception e) {
@@ -71,10 +69,9 @@ public class PersonalImpl extends Conexion implements IPersonal {
     public List<Personal> listar() {
         List<Personal> lista = null;
         ResultSet rs;
-        try {
-            this.conectar();
+        try {            
             String sql = "SELECT * FROM PERSONAL";
-            PreparedStatement ps = this.getCnx().prepareCall(sql);
+            PreparedStatement ps = this.conectar().prepareCall(sql);
             rs = ps.executeQuery();
             lista = new ArrayList();
             Personal cm;

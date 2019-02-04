@@ -5,43 +5,52 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
+import javax.swing.JOptionPane;
 
 public class Conexion {
 
     public static Connection cnx = null;
 
     public static Connection conectar() throws Exception {
-        InputStream inputStream
-            = Conexion.class.getClassLoader().getResourceAsStream("propiedades/db.properties");
-        Properties properties = new Properties();
+//        InputStream inputStream
+//                = Conexion.class.getClassLoader().getResourceAsStream("propiedades/db.properties");
+//        Properties properties = new Properties();
+//        try {
+//            properties.load(inputStream);
+//            String user = properties.getProperty("user");
+//            String pwd = properties.getProperty("pwd");
+//            String url = properties.getProperty("url");
+//            String driver = properties.getProperty("driver");
+        if (cnx != null) {
+            return cnx;
+        }
         try {
-            properties.load(inputStream);
-            String user = properties.getProperty("user");
-            String pwd = properties.getProperty("pwd");
-            String url = properties.getProperty("url");
-            String driver = properties.getProperty("driver");
-            Class.forName(driver);
-            cnx = DriverManager.getConnection(url, user, pwd);
-        } catch (Exception e) {
-            System.out.println("Error en la conexión: " + e.getMessage());
+            String url = "jdbc:sqlserver://192.168.8.10;databaseName=cineVG";
+//            String url = "jdbc:mysql://localhost:3306/bdhospital";
+            String user = "sa";
+            String password = "vallegrande2019";
+//            String driver = "com.mysql.jdbc.Driver";
+            String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+            Class.forName(driver).newInstance();
+            cnx = DriverManager.getConnection(url, user, password);
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error en el: " + ex.getMessage());
         }
         return cnx;
- 
     }
-    
-    public static Connection getCnx() {
-        return cnx;
-    }
-
-    public static void setCnx(Connection cnx) {
-        Conexion.cnx = cnx;
-    }
-    
-    
 
     public static void cerrarCnx() throws SQLException {
-        if(cnx!=null){
+        if (cnx != null) {
             cnx.close();
         }
+    }
+
+    public static void main(String[] args) throws Exception {
+       conectar();
+       if (cnx != null) {
+            System.out.println("abierta");
+        }else{
+           System.out.println("cerrada");
+       }
     }
 }

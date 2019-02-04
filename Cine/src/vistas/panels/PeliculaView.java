@@ -9,12 +9,12 @@ package vistas.panels;
  *
  * @author Valentin
  */
-public class Pelicula extends javax.swing.JPanel {
+public class PeliculaView extends javax.swing.JPanel {
 
     /**
      * Creates new form Pelicula
      */
-    public Pelicula() {
+    public PeliculaView() {
         initComponents();
     }
 
