@@ -8,6 +8,7 @@ public class PeliculaImpl extends Conexion implements IPelicula {
 
     @Override
     public void registrar(Pelicula pelicula) throws Exception {
+        System.out.println("ey");
     }
 
     @Override
