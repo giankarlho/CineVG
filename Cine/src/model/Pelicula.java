@@ -2,12 +2,13 @@ package model;
 
 public class Pelicula {
     
-    private int idPeli;
-    private String genPeli;
-    private String idiPeli;
-    private String durPeli;
-    private String tipPeli;
-    private String claPeli;
+    private int idPeli; //Código
+    private String genPeli; //Genero
+    private String idiPeli; //Idioma
+    private String durPeli; //Duración
+    private String tipPeli; //Tipo
+    private String claPeli; //Clasificación
+    private String nomPeli; //Nombre
     //hola
     
     public int getIdPeli() {
@@ -56,6 +57,14 @@ public class Pelicula {
 
     public void setClaPeli(String claPeli) {
         this.claPeli = claPeli;
+    }
+
+    public String getNomPeli() {
+        return nomPeli;
+    }
+
+    public void setNomPeli(String nomPeli) {
+        this.nomPeli = nomPeli;
     }
   
 }

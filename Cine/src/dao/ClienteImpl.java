@@ -33,7 +33,7 @@ public class ClienteImpl extends Conexion implements ICliente {
             String sql = "UPDATE CLIENTE SET NOMCLI = ? , APECLI = ?, NACCLI = ?  WHERE IDCLI = ?";
             PreparedStatement ps = this.conectar().prepareStatement(sql);
             ps.setString(1, cliente.getNomCli());
-            ps.setString(1, cliente.getApeCli());
+            ps.setString(2, cliente.getApeCli());
             ps.setDate(3, cliente.getNacCli());
             ps.setInt(4, cliente.getIdCli());
             ps.executeUpdate();

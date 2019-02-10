@@ -26,11 +26,14 @@ public class Conexion {
         }
         try {
             String url = "jdbc:sqlserver://192.168.8.10;databaseName=cineVG";
+//            String url = "jdbc:oracle:thin:@localhost:1521:XE";
 //            String url = "jdbc:mysql://localhost:3306/bdhospital";
             String user = "sa";
+//            String user = "CINE";
             String password = "vallegrande2019";
 //            String driver = "com.mysql.jdbc.Driver";
             String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+//            String driver = "oracle.jdbc.OracleDriver";
             Class.forName(driver).newInstance();
             cnx = DriverManager.getConnection(url, user, password);
         } catch (SQLException ex) {

@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import vistas.panels.ClienteView;
+import vistas.panels.PeliculaView;
 
 public class Principal extends javax.swing.JFrame {
 
@@ -55,6 +56,11 @@ public class Principal extends javax.swing.JFrame {
 
         btnPelicula.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnPelicula.setText("Pelicula");
+        btnPelicula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPeliculaActionPerformed(evt);
+            }
+        });
 
         btnSala.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnSala.setText("Sala");
@@ -274,6 +280,21 @@ public class Principal extends javax.swing.JFrame {
         jpPrincipal.revalidate();
         jpPrincipal.repaint();
     }//GEN-LAST:event_btnMenuActionPerformed
+
+    private void btnPeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPeliculaActionPerformed
+        PeliculaView pelicula;
+        try {
+            pelicula = new PeliculaView();
+            pelicula.setSize(700, 600);
+            pelicula.setLocation(0, 0);
+            jpPrincipal.removeAll();
+            jpPrincipal.add(pelicula, BorderLayout.CENTER);
+            jpPrincipal.revalidate();
+            jpPrincipal.repaint();
+        } catch (Exception ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnPeliculaActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

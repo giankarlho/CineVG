@@ -1,6 +1,5 @@
 package dao;
 
-import java.util.List;
 import model.Pelicula;
 
 
@@ -12,6 +11,5 @@ public interface IPelicula {
 
     void eliminar(Pelicula pelicula) throws Exception;
 
-    List<Pelicula> listar();
 
 }
