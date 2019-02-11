@@ -10,6 +10,15 @@ public class Ubigeo {
         return idUbi;
     }
 
+    public Ubigeo() { // para instanciar un objeto
+    }
+
+    public Ubigeo(String idUbi, String distUbi) { // para obtener el idUbi en el Combo
+        this.idUbi = idUbi;
+        this.distUbi = distUbi;
+    }
+      
+
     public void setIdUbi(String idUbi) {
         this.idUbi = idUbi;
     }

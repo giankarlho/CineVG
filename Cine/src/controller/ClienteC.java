@@ -11,12 +11,12 @@ import vistas.panels.ClienteView;
 
 public class ClienteC {
 
-    Cliente cliente = new Cliente();
+    Cliente cliente;
     List<Cliente> lstCliente;
     ClienteImpl dao;
 
     public ClienteC() {
-
+        cliente= new Cliente();
     }
 
     public void registrarCliente() throws Exception {
@@ -51,6 +51,7 @@ public class ClienteC {
     }
 
     public void variables() {
+        
         cliente.setNomCli(ClienteView.txtNom.getText());
         cliente.setApeCli(ClienteView.txtApe.getText());
         SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");

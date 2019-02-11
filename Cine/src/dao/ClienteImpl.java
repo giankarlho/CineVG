@@ -26,7 +26,7 @@ public class ClienteImpl extends Conexion implements ICliente {
         }
     }
 
-    @Override
+     @Override
     public void modificar(Cliente cliente) throws Exception {
         try {
             this.conectar();
