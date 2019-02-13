@@ -1,6 +1,6 @@
 Cliente: Carlos 
-Pelicula: Dooglas
-Sala:Diego
+Pelicula: Diego
+Sala:Dooglas
 Venta:Marcos-Jesus
 Personal: Alexander
 detalles: Casas - Arian
