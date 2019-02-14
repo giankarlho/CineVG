@@ -4,7 +4,7 @@ import controller.ClienteC;
 import dao.ClienteImpl;
 import java.sql.Date;
 import javax.swing.JOptionPane;
-<
+
 import javax.swing.table.DefaultTableModel;
 
 
@@ -458,8 +458,8 @@ public class ClienteView extends javax.swing.JPanel {
                 codigoCliente = Integer.parseInt(tblCliente.getValueAt(fila, 0).toString());
                 txtNom.setText(tblCliente.getValueAt(fila, 1).toString());
                 txtApe.setText(tblCliente.getValueAt(fila, 2).toString());
-                jdNac.setDate(Date.valueOf(tblCliente.getValueAt(fila, 3).toString());
-                btnEliminarReg.setEnabled(true);
+                jdNac.setDate(Date.valueOf(tblCliente.getValueAt(fila, 3).toString()));
+//                btnEliminarReg.setEnabled(true);
                 btnModificarReg.setEnabled(true);
                 btnGuardar.setEnabled(false);
                 btnModificar.setEnabled(false);
