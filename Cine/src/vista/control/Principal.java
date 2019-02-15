@@ -5,6 +5,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import vistas.panels.ClienteView;
 import vistas.panels.PeliculaView;
+import vistas.panels.PersonalView;
 
 public class Principal extends javax.swing.JFrame {
 
@@ -23,10 +24,11 @@ public class Principal extends javax.swing.JFrame {
         btnSala = new javax.swing.JButton();
         btnPersonal = new javax.swing.JButton();
         btnVenta = new javax.swing.JButton();
-        btnTablero = new javax.swing.JButton();
+        btnReportes = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         lblUserNom = new javax.swing.JLabel();
         lblUserApe = new javax.swing.JLabel();
+        btnTablero = new javax.swing.JButton();
         jpTitulo = new javax.swing.JPanel();
         btnMin = new javax.swing.JButton();
         btnCerrar = new javax.swing.JButton();
@@ -47,7 +49,9 @@ public class Principal extends javax.swing.JFrame {
         jpMenu.setBackground(new java.awt.Color(255, 255, 204));
 
         btnCliente.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Cliente_32x32.png"))); // NOI18N
         btnCliente.setText("Cliente");
+        btnCliente.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClienteActionPerformed(evt);
@@ -55,7 +59,9 @@ public class Principal extends javax.swing.JFrame {
         });
 
         btnPelicula.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnPelicula.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/pelicula_32x32.png"))); // NOI18N
         btnPelicula.setText("Pelicula");
+        btnPelicula.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnPelicula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPeliculaActionPerformed(evt);
@@ -63,18 +69,36 @@ public class Principal extends javax.swing.JFrame {
         });
 
         btnSala.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnSala.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/sala_32x32.png"))); // NOI18N
         btnSala.setText("Sala");
+        btnSala.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         btnPersonal.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnPersonal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Users_32x32.png"))); // NOI18N
         btnPersonal.setText("Personal");
+        btnPersonal.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnPersonal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPersonalActionPerformed(evt);
+            }
+        });
 
         btnVenta.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/money.png"))); // NOI18N
         btnVenta.setText("Venta");
+        btnVenta.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+
+        btnReportes.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/20_32x32.png"))); // NOI18N
+        btnReportes.setText("Reportes");
+        btnReportes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Mega_GamesPack_090_2.png"))); // NOI18N
 
         btnTablero.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnTablero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/tablero_32x32.png"))); // NOI18N
         btnTablero.setText("Tablero");
-
-        jLabel2.setText("Usuario");
+        btnTablero.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         javax.swing.GroupLayout jpMenuLayout = new javax.swing.GroupLayout(jpMenu);
         jpMenu.setLayout(jpMenuLayout);
@@ -86,49 +110,52 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(lblUserNom, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblUserApe, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPelicula, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                    .addComponent(btnSala, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                    .addComponent(btnPersonal, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                    .addComponent(btnVenta, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                    .addComponent(btnTablero, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE))
+                    .addComponent(btnPelicula, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSala, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPersonal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnVenta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnReportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jpMenuLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(btnTablero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(jpMenuLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpMenuLayout.setVerticalGroup(
             jpMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpMenuLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(25, 25, 25)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblUserNom, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
                 .addComponent(lblUserApe, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(10, 10, 10)
                 .addComponent(btnPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(10, 10, 10)
                 .addComponent(btnSala, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(10, 10, 10)
                 .addComponent(btnPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(10, 10, 10)
                 .addComponent(btnVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(10, 10, 10)
                 .addComponent(btnTablero, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92))
+                .addGap(10, 10, 10)
+                .addComponent(btnReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
         );
 
-        jpTitulo.setBackground(new java.awt.Color(153, 255, 153));
+        jpTitulo.setBackground(new java.awt.Color(2, 136, 209));
         jpTitulo.setForeground(new java.awt.Color(153, 255, 153));
         jpTitulo.setMaximumSize(new java.awt.Dimension(900, 50));
         jpTitulo.setMinimumSize(new java.awt.Dimension(900, 50));
         jpTitulo.setPreferredSize(new java.awt.Dimension(700, 50));
 
         btnMin.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        btnMin.setText("-");
+        btnMin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/min_32x32.png"))); // NOI18N
+        btnMin.setContentAreaFilled(false);
         btnMin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMinActionPerformed(evt);
@@ -136,7 +163,8 @@ public class Principal extends javax.swing.JFrame {
         });
 
         btnCerrar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        btnCerrar.setText("X");
+        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/cerrar_32x32.png"))); // NOI18N
+        btnCerrar.setContentAreaFilled(false);
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarActionPerformed(evt);
@@ -144,14 +172,17 @@ public class Principal extends javax.swing.JFrame {
         });
 
         btnSesion.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        btnSesion.setText("C");
+        btnSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/sesion_32x32.png"))); // NOI18N
+        btnSesion.setBorderPainted(false);
+        btnSesion.setContentAreaFilled(false);
         btnSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSesionActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Sistema de Gestión de Cine");
 
         btnMenu.setText("---");
@@ -168,32 +199,34 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jpTituloLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnMenu)
-                .addGap(109, 109, 109)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
-                .addComponent(btnSesion)
-                .addGap(18, 18, 18)
-                .addComponent(btnCerrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnMin)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 290, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(167, 167, 167)
+                .addComponent(btnSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addComponent(btnMin, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jpTituloLayout.setVerticalGroup(
             jpTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpTituloLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(6, 6, 6)
                 .addGroup(jpTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jpTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1))
                     .addGroup(jpTituloLayout.createSequentialGroup()
                         .addGroup(jpTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(jpTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(btnMin)
-                                .addComponent(btnCerrar)
-                                .addComponent(btnSesion)))
+                            .addComponent(btnSesion)
+                            .addComponent(btnMin)
+                            .addComponent(btnCerrar))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
+
+        jpTituloLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCerrar, btnMin, btnSesion});
 
         jpPrincipal.setBackground(new java.awt.Color(204, 255, 255));
         jpPrincipal.setMaximumSize(new java.awt.Dimension(700, 600));
@@ -206,17 +239,15 @@ public class Principal extends javax.swing.JFrame {
         jpPrincipal.setLayout(jpPrincipalLayout);
         jpPrincipalLayout.setHorizontalGroup(
             jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpPrincipalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 779, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpPrincipalLayout.createSequentialGroup()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jpPrincipalLayout.setVerticalGroup(
             jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpPrincipalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 624, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 635, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -224,13 +255,12 @@ public class Principal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jpPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 779, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jpTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jpTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 955, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jpPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 798, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,8 +268,8 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jpTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jpMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jpPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)))
+                    .addComponent(jpPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 639, Short.MAX_VALUE)
+                    .addComponent(jpMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         pack();
@@ -296,6 +326,21 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnPeliculaActionPerformed
 
+    private void btnPersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPersonalActionPerformed
+        PersonalView personal;
+        try {
+            personal = new PersonalView();
+            personal.setSize(700, 600);
+            personal.setLocation(0, 0);
+            jpPrincipal.removeAll();
+            jpPrincipal.add(personal, BorderLayout.CENTER);
+            jpPrincipal.revalidate();
+            jpPrincipal.repaint();
+        } catch (Exception ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnPersonalActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -335,6 +380,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnMin;
     private javax.swing.JButton btnPelicula;
     private javax.swing.JButton btnPersonal;
+    private javax.swing.JButton btnReportes;
     private javax.swing.JButton btnSala;
     private javax.swing.JButton btnSesion;
     private javax.swing.JButton btnTablero;

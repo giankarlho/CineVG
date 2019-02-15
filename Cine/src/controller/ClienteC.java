@@ -1,49 +1,42 @@
 package controller;
 
 import dao.ClienteImpl;
+import java.io.Serializable;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
-import javax.annotation.PostConstruct;
-import javax.swing.table.DefaultTableModel;
 import model.Cliente;
 import vistas.panels.ClienteView;
 
-public class ClienteC {
+public class ClienteC implements Serializable {
 
     Cliente cliente;
     List<Cliente> lstCliente;
     ClienteImpl dao;
 
     public ClienteC() {
-        cliente= new Cliente();
+        cliente = new Cliente();
+        dao = new ClienteImpl();
     }
 
     public void registrarCliente() throws Exception {
-        dao = new ClienteImpl();
         try {
             dao.registrar(cliente);
-//            listarCliente();
         } catch (Exception e) {
             System.out.println("Error en registrarCliente ClienteC " + e.getMessage());
         }
     }
 
     public void eliminarCliente() throws Exception {
-        ClienteImpl dao;
         try {
-            dao = new ClienteImpl();
             dao.eliminar(cliente);
-
         } catch (Exception e) {
             throw e;
         }
     }
 
     public void modificarCliente() throws Exception {
-        ClienteImpl dao;
         try {
-            dao = new ClienteImpl();
             dao.modificar(cliente);
         } catch (Exception e) {
             throw e;
@@ -51,11 +44,14 @@ public class ClienteC {
     }
 
     public void variables() {
-        
-        cliente.setNomCli(ClienteView.txtNom.getText());
-        cliente.setApeCli(ClienteView.txtApe.getText());
-        SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
-        cliente.setNacCli(Date.valueOf(formatoFecha.format(ClienteView.jdNac.getDate())));
+        try {
+            cliente.setNomCli(ClienteView.txtNom.getText());
+            cliente.setApeCli(ClienteView.txtApe.getText());
+            SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
+            cliente.setNacCli(Date.valueOf(formatoFecha.format(ClienteView.jdNac.getDate())));
+        } catch (Exception e) {
+            System.out.println("Error en variables Cliente " + e.getMessage());
+        }
     }
 
     public void limpiar() {

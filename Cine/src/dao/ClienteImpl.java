@@ -9,10 +9,10 @@ import model.Cliente;
 public class ClienteImpl extends Conexion implements ICliente {
 
     public static int cantidad;
-    
+
     @Override
     public void registrar(Cliente cliente) throws Exception {
-        try {            
+        try {
 //            String sql = "INSERT INTO CLIENTE (NOMCLI,APECLI,NACCLI) VALUES (?,?,TO_DATE(?,'DD/MM/YYYY')";
             String sql = "INSERT INTO CLIENTE (NOMCLI,APECLI,NACCLI) VALUES (?,?,?)";
             PreparedStatement ps = this.conectar().prepareStatement(sql);
@@ -26,7 +26,7 @@ public class ClienteImpl extends Conexion implements ICliente {
         }
     }
 
-     @Override
+    @Override
     public void modificar(Cliente cliente) throws Exception {
         try {
             this.conectar();
@@ -54,9 +54,8 @@ public class ClienteImpl extends Conexion implements ICliente {
             throw e;
         }
     }
- 
-    
-        public void buscar(DefaultTableModel modelo, Integer tipo, String dato) throws Exception {
+
+    public void buscar(DefaultTableModel modelo, Integer tipo, String dato) throws Exception {
         // 1: todos, 2: nombre, 3: ruc, 4: apellido
         String sql = "";
         switch (tipo) {
@@ -68,7 +67,7 @@ public class ClienteImpl extends Conexion implements ICliente {
                 break;
             case 3:
                 sql = "select * from cliente where apeCli like '%" + dato + "%'";
-                break;            
+                break;
         }
         String datos[] = new String[4];
         Statement st = this.conectar().createStatement();
@@ -83,5 +82,4 @@ public class ClienteImpl extends Conexion implements ICliente {
         rs.close();
         st.close();
     }
-
 }

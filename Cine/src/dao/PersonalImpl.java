@@ -2,14 +2,14 @@ package dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.sql.Statement;
+import javax.swing.table.DefaultTableModel;
 import model.Personal;
 
 public class PersonalImpl extends Conexion implements IPersonal {
 
+    public static int cantidad;
+    
     @Override
     public void registrar(Personal personal) throws Exception {
         try {            
@@ -54,8 +54,7 @@ public class PersonalImpl extends Conexion implements IPersonal {
 
     @Override
     public void eliminar(Personal personal) throws Exception {
-        try {
-            this.conectar();
+        try {            
             String sql = "DELETE FROM PERSONAL WHERE IdPer = ?";
             PreparedStatement ps = this.conectar().prepareStatement(sql);
             ps.setInt(1, personal.getIdPer());
@@ -65,37 +64,35 @@ public class PersonalImpl extends Conexion implements IPersonal {
         }
     }
 
-    @Override
-    public List<Personal> listar() {
-        List<Personal> lista = null;
-        ResultSet rs;
-        try {            
-            String sql = "SELECT * FROM PERSONAL";
-            PreparedStatement ps = this.conectar().prepareCall(sql);
-            rs = ps.executeQuery();
-            lista = new ArrayList();
-            Personal cm;
-            while (rs.next()) {
-                cm = new Personal();
-                cm.setIdPer(rs.getInt("IdPer"));
-                cm.setNomPer(rs.getString("NomPer"));
-                cm.setApePer(rs.getString("ApePer"));
-                cm.setDniPer(rs.getString("DniPer"));
-                cm.setDirPer(rs.getString("DirPer"));
-                cm.setTipPer(rs.getString("TipPer"));
-                cm.setSexPer(rs.getString("SexPer"));
-                cm.setUsuPer(rs.getString("UsuPer"));
-                cm.setPwdPer(rs.getString("PwdPer"));
-                cm.setIdUbi(rs.getString("IdUbi"));
-                lista.add(cm);
-            }
-        } catch (Exception e) {
-            try {
-                throw e;
-            } catch (Exception ex) {
-                Logger.getLogger(PersonalImpl.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        public void buscar(DefaultTableModel modelo, Integer tipo, String dato) throws Exception {
+        // 1: todos, 2: nombre, 3: ruc, 4: apellido
+        String sql = "";
+        switch (tipo) {
+            case 1:
+                sql = "select * from PERSONAL";
+                break;
+            case 2:
+                sql = "select * from PERSONAL where nomCli like '%" + dato + "%'";
+                break;
+            case 3:
+                sql = "select * from PERSONAL where apeCli like '%" + dato + "%'";
+                break;
+            case 4:
+                sql = "select * from PERSONAL where apeCli like '%" + dato + "%'";
+                break;
         }
-        return lista;
+        String datos[] = new String[4];
+        Statement st = this.conectar().createStatement();
+        ResultSet rs = st.executeQuery(sql);
+        while (rs.next()) {
+            for (int i = 0; i < 4; i++) {
+                datos[i] = rs.getString(i + 1);
+            }
+            modelo.addRow(datos);
+            cantidad++;
+        }
+        rs.close();
+        st.close();
     }
+
 }

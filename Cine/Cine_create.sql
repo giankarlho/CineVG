@@ -29,7 +29,8 @@ CREATE TABLE Personal (
     tipPer int NOT NULL, --COMMENT 'tipo de personal: 1: administrador, 2: empleado',
     sexPer char(1) NOT NULL,
     usuPer char(4) NOT NULL,
-    pwdPer varchar(50) NOT NULL    
+    pwdPer varchar(50) NOT NULL,
+	ubiPer char(6)    
 )
 go
 

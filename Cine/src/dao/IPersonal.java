@@ -11,6 +11,4 @@ public interface IPersonal {
 
     void eliminar(Personal personal) throws Exception;
 
-    List<Personal> listar();
-
 }

@@ -7,8 +7,6 @@ import javax.swing.JOptionPane;
 
 import javax.swing.table.DefaultTableModel;
 
-
-
 public class ClienteView extends javax.swing.JPanel {
 
     public static DefaultTableModel modeloTabla;
@@ -43,6 +41,7 @@ public class ClienteView extends javax.swing.JPanel {
         btnGuardar = new javax.swing.JButton();
         btnListado = new javax.swing.JButton();
         btnModificarReg = new javax.swing.JButton();
+        btnImprimir = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -50,11 +49,13 @@ public class ClienteView extends javax.swing.JPanel {
         txtNom = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jdNac = new com.toedter.calendar.JDateChooser();
+        jLabel4 = new javax.swing.JLabel();
         jpListado = new javax.swing.JPanel();
         jpSMneu1 = new javax.swing.JPanel();
         btnNuevoReg = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
+        btnImprimir1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCliente = new javax.swing.JTable();
         txtDato = new javax.swing.JTextField();
@@ -72,41 +73,73 @@ public class ClienteView extends javax.swing.JPanel {
         jpCRUD.setMinimumSize(new java.awt.Dimension(700, 600));
         jpCRUD.setPreferredSize(new java.awt.Dimension(700, 600));
 
-        jpSMneu.setMaximumSize(new java.awt.Dimension(170, 560));
-        jpSMneu.setMinimumSize(new java.awt.Dimension(170, 560));
-        jpSMneu.setPreferredSize(new java.awt.Dimension(170, 560));
+        jpSMneu.setMaximumSize(new java.awt.Dimension(160, 600));
+        jpSMneu.setMinimumSize(new java.awt.Dimension(160, 600));
+        jpSMneu.setPreferredSize(new java.awt.Dimension(160, 600));
 
-        btnNuevo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/entrega.png"))); // NOI18N
+        btnNuevo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nuevo.png"))); // NOI18N
         btnNuevo.setText("Nuevo");
+        btnNuevo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnNuevo.setMaximumSize(new java.awt.Dimension(137, 60));
+        btnNuevo.setMinimumSize(new java.awt.Dimension(137, 60));
+        btnNuevo.setPreferredSize(new java.awt.Dimension(137, 60));
         btnNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoActionPerformed(evt);
             }
         });
 
-        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/guardar(1).png"))); // NOI18N
+        btnGuardar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/guardar_48x48.png"))); // NOI18N
         btnGuardar.setText("Guardar");
+        btnGuardar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnGuardar.setMaximumSize(new java.awt.Dimension(137, 60));
+        btnGuardar.setMinimumSize(new java.awt.Dimension(137, 60));
+        btnGuardar.setPreferredSize(new java.awt.Dimension(137, 60));
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarActionPerformed(evt);
             }
         });
 
-        btnListado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/reportar(2).png"))); // NOI18N
+        btnListado.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnListado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/listado_48x48.png"))); // NOI18N
         btnListado.setText("Listado");
+        btnListado.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnListado.setMaximumSize(new java.awt.Dimension(137, 60));
+        btnListado.setMinimumSize(new java.awt.Dimension(137, 60));
+        btnListado.setPreferredSize(new java.awt.Dimension(137, 60));
         btnListado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnListadoActionPerformed(evt);
             }
         });
 
-        btnModificarReg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/reportar(2).png"))); // NOI18N
+        btnModificarReg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnModificarReg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/modificar_48x48.png"))); // NOI18N
         btnModificarReg.setText("Modificar");
         btnModificarReg.setEnabled(false);
+        btnModificarReg.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnModificarReg.setMaximumSize(new java.awt.Dimension(137, 60));
+        btnModificarReg.setMinimumSize(new java.awt.Dimension(137, 60));
+        btnModificarReg.setPreferredSize(new java.awt.Dimension(137, 60));
         btnModificarReg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModificarRegActionPerformed(evt);
+            }
+        });
+
+        btnImprimir.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/printer_48x48.png"))); // NOI18N
+        btnImprimir.setText("Imprimir");
+        btnImprimir.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnImprimir.setMaximumSize(new java.awt.Dimension(137, 60));
+        btnImprimir.setMinimumSize(new java.awt.Dimension(137, 60));
+        btnImprimir.setPreferredSize(new java.awt.Dimension(137, 60));
+        btnImprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImprimirActionPerformed(evt);
             }
         });
 
@@ -116,33 +149,40 @@ public class ClienteView extends javax.swing.JPanel {
             jpSMneuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpSMneuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jpSMneuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpSMneuLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnNuevo))
-                    .addGroup(jpSMneuLayout.createSequentialGroup()
+                .addComponent(btnModificarReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpSMneuLayout.createSequentialGroup()
+                .addGroup(jpSMneuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpSMneuLayout.createSequentialGroup()
                         .addGroup(jpSMneuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnListado, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnModificarReg, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnGuardar))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addGroup(jpSMneuLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(btnListado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jpSMneuLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(btnImprimir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jpSMneuLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jpSMneuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnNuevo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
-
-        jpSMneuLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnGuardar, btnListado, btnModificarReg, btnNuevo});
-
         jpSMneuLayout.setVerticalGroup(
             jpSMneuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpSMneuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnNuevo)
-                .addGap(18, 18, 18)
-                .addComponent(btnGuardar)
-                .addGap(29, 29, 29)
-                .addComponent(btnModificarReg)
-                .addGap(143, 143, 143)
-                .addComponent(btnListado)
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addGap(10, 10, 10)
+                .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(btnModificarReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(89, 89, 89)
+                .addComponent(btnImprimir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
+                .addComponent(btnListado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
         );
 
         jpSMneuLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnGuardar, btnListado, btnModificarReg, btnNuevo});
@@ -198,24 +238,35 @@ public class ClienteView extends javax.swing.JPanel {
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel4.setText("Registro de Cliente");
+
         javax.swing.GroupLayout jpCRUDLayout = new javax.swing.GroupLayout(jpCRUD);
         jpCRUD.setLayout(jpCRUDLayout);
         jpCRUDLayout.setHorizontalGroup(
             jpCRUDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpCRUDLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jpCRUDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jpCRUDLayout.createSequentialGroup()
+                        .addGap(157, 157, 157)
+                        .addComponent(jLabel4)))
+                .addGap(32, 32, 32)
                 .addComponent(jpSMneu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpCRUDLayout.setVerticalGroup(
             jpCRUDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpSMneu, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
             .addGroup(jpCRUDLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel4)
+                .addGap(33, 33, 33)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jpCRUDLayout.createSequentialGroup()
+                .addComponent(jpSMneu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         add(jpCRUD, "card2");
@@ -225,31 +276,59 @@ public class ClienteView extends javax.swing.JPanel {
         jpListado.setMinimumSize(new java.awt.Dimension(700, 600));
         jpListado.setPreferredSize(new java.awt.Dimension(700, 600));
 
-        jpSMneu1.setMaximumSize(new java.awt.Dimension(170, 560));
-        jpSMneu1.setMinimumSize(new java.awt.Dimension(170, 560));
+        jpSMneu1.setMaximumSize(new java.awt.Dimension(160, 600));
+        jpSMneu1.setMinimumSize(new java.awt.Dimension(160, 600));
+        jpSMneu1.setPreferredSize(new java.awt.Dimension(160, 600));
 
-        btnNuevoReg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnNuevoReg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/entrega.png"))); // NOI18N
+        btnNuevoReg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnNuevoReg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/nuevo.png"))); // NOI18N
         btnNuevoReg.setText("Nuevo");
+        btnNuevoReg.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnNuevoReg.setMaximumSize(new java.awt.Dimension(137, 60));
+        btnNuevoReg.setMinimumSize(new java.awt.Dimension(137, 60));
+        btnNuevoReg.setPreferredSize(new java.awt.Dimension(137, 60));
         btnNuevoReg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoRegActionPerformed(evt);
             }
         });
 
-        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/reportar(2).png"))); // NOI18N
+        btnModificar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/modificar_48x48.png"))); // NOI18N
         btnModificar.setText("Modificar");
+        btnModificar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnModificar.setMaximumSize(new java.awt.Dimension(137, 60));
+        btnModificar.setMinimumSize(new java.awt.Dimension(137, 60));
+        btnModificar.setPreferredSize(new java.awt.Dimension(137, 60));
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModificarActionPerformed(evt);
             }
         });
 
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/reportar(2).png"))); // NOI18N
+        btnEliminar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/eliminar_48x48.png"))); // NOI18N
         btnEliminar.setText("Eliminar");
+        btnEliminar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnEliminar.setMaximumSize(new java.awt.Dimension(137, 60));
+        btnEliminar.setMinimumSize(new java.awt.Dimension(137, 60));
+        btnEliminar.setPreferredSize(new java.awt.Dimension(137, 60));
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarActionPerformed(evt);
+            }
+        });
+
+        btnImprimir1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnImprimir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/printer_48x48.png"))); // NOI18N
+        btnImprimir1.setText("Imprimir");
+        btnImprimir1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnImprimir1.setMaximumSize(new java.awt.Dimension(137, 60));
+        btnImprimir1.setMinimumSize(new java.awt.Dimension(137, 60));
+        btnImprimir1.setPreferredSize(new java.awt.Dimension(137, 60));
+        btnImprimir1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImprimir1ActionPerformed(evt);
             }
         });
 
@@ -257,32 +336,31 @@ public class ClienteView extends javax.swing.JPanel {
         jpSMneu1.setLayout(jpSMneu1Layout);
         jpSMneu1Layout.setHorizontalGroup(
             jpSMneu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpSMneu1Layout.createSequentialGroup()
+                .addContainerGap(11, Short.MAX_VALUE)
+                .addGroup(jpSMneu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNuevoReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(12, Short.MAX_VALUE))
             .addGroup(jpSMneu1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpSMneu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpSMneu1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnNuevoReg))
-                    .addGroup(jpSMneu1Layout.createSequentialGroup()
-                        .addGroup(jpSMneu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnImprimir1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jpSMneu1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnEliminar, btnModificar, btnNuevoReg});
-
         jpSMneu1Layout.setVerticalGroup(
             jpSMneu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpSMneu1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnNuevoReg)
-                .addGap(18, 18, 18)
-                .addComponent(btnModificar)
-                .addGap(29, 29, 29)
-                .addComponent(btnEliminar)
-                .addContainerGap(301, Short.MAX_VALUE))
+                .addGap(10, 10, 10)
+                .addComponent(btnNuevoReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnImprimir1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
         );
 
         jpSMneu1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnEliminar, btnModificar, btnNuevoReg});
@@ -345,7 +423,6 @@ public class ClienteView extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpListadoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpListadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
                     .addGroup(jpListadoLayout.createSequentialGroup()
                         .addComponent(jrNombre)
                         .addGap(18, 18, 18)
@@ -353,27 +430,26 @@ public class ClienteView extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(chkTodos)
                         .addGap(18, 18, 18)
-                        .addComponent(txtDato)))
+                        .addComponent(txtDato, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
+                        .addGap(30, 30, 30))
+                    .addComponent(jScrollPane1))
                 .addGap(18, 18, 18)
-                .addComponent(jpSMneu1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jpSMneu1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2))
         );
         jpListadoLayout.setVerticalGroup(
             jpListadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpListadoLayout.createSequentialGroup()
-                .addGroup(jpListadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jpListadoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jpSMneu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jpListadoLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(jpListadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jrNombre)
-                            .addComponent(jrApellido)
-                            .addComponent(txtDato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(chkTodos))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)))
+                .addGap(23, 23, 23)
+                .addGroup(jpListadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jrNombre)
+                    .addComponent(jrApellido)
+                    .addComponent(txtDato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(chkTodos))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)
                 .addContainerGap())
+            .addComponent(jpSMneu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         add(jpListado, "card3");
@@ -510,11 +586,21 @@ public class ClienteView extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
+    private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnImprimirActionPerformed
+
+    private void btnImprimir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimir1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnImprimir1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEliminar;
     private javax.swing.ButtonGroup btnGroupCliente;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnImprimir;
+    private javax.swing.JButton btnImprimir1;
     private javax.swing.JButton btnListado;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnModificarReg;
@@ -524,6 +610,7 @@ public class ClienteView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public static com.toedter.calendar.JDateChooser jdNac;
