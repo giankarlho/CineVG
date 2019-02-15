@@ -29,8 +29,7 @@ public class Conexion {
 //            String url = "jdbc:oracle:thin:@localhost:1521:XE";
 //            String url = "jdbc:mysql://localhost:3306/bdhospital";
             String user = "sa";
-//            String user = "CINE";
-            String password = "@gvs123@";
+            String password = "vallegrande2019";
 //            String driver = "com.mysql.jdbc.Driver";
             String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 //            String driver = "oracle.jdbc.OracleDriver";

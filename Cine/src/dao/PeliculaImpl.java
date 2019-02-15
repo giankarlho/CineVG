@@ -86,7 +86,7 @@ public class PeliculaImpl extends Conexion implements IPelicula {
         }
         rs.close();
         st.close();
-    }
-    
+    } 
+
     
 }

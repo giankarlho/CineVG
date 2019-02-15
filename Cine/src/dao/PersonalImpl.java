@@ -3,23 +3,25 @@ package dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import model.Personal;
 
 public class PersonalImpl extends Conexion implements IPersonal {
 
     public static int cantidad;
-    
+
     @Override
     public void registrar(Personal personal) throws Exception {
-        try {            
+        try {
             String sql = "INSERT INTO PERSONAL (NomPer,ApePer,DniPer,DirPer,TipPer,SexPer,UsuPer,PwdPer,IdUbi)";
             PreparedStatement ps = this.conectar().prepareStatement(sql);
             ps.setString(1, personal.getNomPer());
             ps.setString(2, personal.getApePer());
             ps.setString(3, personal.getDniPer());
             ps.setString(4, personal.getDirPer());
-            ps.setString(5, personal.getTipPer());
+            ps.setInt(5, personal.getTipPer());
             ps.setString(6, personal.getSexPer());
             ps.setString(7, personal.getUsuPer());
             ps.setString(8, personal.getPwdPer());
@@ -33,14 +35,14 @@ public class PersonalImpl extends Conexion implements IPersonal {
 
     @Override
     public void modificar(Personal personal) throws Exception {
-        try {            
+        try {
             String sql = "UPDATE PERSONAL SET NomPer=?,ApePer=?,DniPer=?,DirPer=?,TipPer=?,SexPer=?,UsuPer=?,PwdPer=?,IdUbi=?  WHERE IdPer = ?";
             PreparedStatement ps = this.conectar().prepareStatement(sql);
             ps.setString(1, personal.getNomPer());
             ps.setString(2, personal.getApePer());
             ps.setString(3, personal.getDniPer());
             ps.setString(4, personal.getDirPer());
-            ps.setString(5, personal.getTipPer());
+            ps.setInt(5, personal.getTipPer());
             ps.setString(6, personal.getSexPer());
             ps.setString(7, personal.getUsuPer());
             ps.setString(8, personal.getPwdPer());
@@ -54,7 +56,7 @@ public class PersonalImpl extends Conexion implements IPersonal {
 
     @Override
     public void eliminar(Personal personal) throws Exception {
-        try {            
+        try {
             String sql = "DELETE FROM PERSONAL WHERE IdPer = ?";
             PreparedStatement ps = this.conectar().prepareStatement(sql);
             ps.setInt(1, personal.getIdPer());
@@ -64,7 +66,7 @@ public class PersonalImpl extends Conexion implements IPersonal {
         }
     }
 
-        public void buscar(DefaultTableModel modelo, Integer tipo, String dato) throws Exception {
+    public void buscar(DefaultTableModel modelo, Integer tipo, String dato) throws Exception {
         // 1: todos, 2: nombre, 3: ruc, 4: apellido
         String sql = "";
         switch (tipo) {
@@ -93,6 +95,27 @@ public class PersonalImpl extends Conexion implements IPersonal {
         }
         rs.close();
         st.close();
+    }
+
+    public Personal listarLogin(String usu, String pass) throws Exception {
+        Personal per = new Personal();
+        try {
+            String sql = "SELECT nomPer,apePer,tipPer FROM personal WHERE usuPer=? AND pwdPer=?";
+            PreparedStatement ps = this.conectar().prepareStatement(sql);
+            ps.setString(1, usu);
+            ps.setString(2, pass);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                per.setNomPer(rs.getString("nomPer"));
+                per.setApePer(rs.getString("apePer"));
+                per.setTipPer(rs.getInt("tipPer"));
+            }
+            rs.close();
+            ps.close();
+        } catch (Exception e) {
+            System.out.println("Error en el login " + e.getMessage());
+        }
+        return per;
     }
 
 }

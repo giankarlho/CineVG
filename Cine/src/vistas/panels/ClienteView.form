@@ -103,32 +103,18 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnModificarReg" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="13" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnGuardar" alignment="0" pref="140" max="32767" attributes="0"/>
+                          <Component id="btnNuevo" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="btnListado" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="btnImprimir" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="btnModificarReg" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnListado" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnImprimir" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnGuardar" max="32767" attributes="0"/>
-                                  <Component id="btnNuevo" max="32767" attributes="0"/>
-                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -370,9 +356,6 @@
               </Properties>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="jdNac">
-              <Properties>
-                <Property name="dateFormatString" type="java.lang.String" value="dd/mm/yyyy"/>
-              </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
               </AuxValues>
@@ -448,7 +431,7 @@
                   <Component id="jScrollPane1" pref="517" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
-              <Component id="jpSMneu1" alignment="0" max="32767" attributes="0"/>
+              <Component id="jpSMneu1" alignment="0" pref="604" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>

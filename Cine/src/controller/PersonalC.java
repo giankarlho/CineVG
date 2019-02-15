@@ -17,6 +17,16 @@ public class PersonalC implements Serializable {
         personal = new Personal();
     }
 
+    public int loguin() throws Exception{        
+        Personal per ;
+        per = dao.listarLogin("user","1234");
+        if (per.getUsuPer()==null){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+            
     public void registrarPersonal() throws Exception {
         try {
             dao.registrar(personal);

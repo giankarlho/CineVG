@@ -1,17 +1,25 @@
 package model;
 
 public class Personal {
-    
+
     private int idPer;
     private String nomPer;
     private String apePer;
     private String dniPer;
     private String dirPer;
-    private String tipPer;
+    private int tipPer;
     private String sexPer;
     private String usuPer;
     private String pwdPer;
     private String idUbi;
+
+    public int getTipPer() {
+        return tipPer;
+    }
+
+    public void setTipPer(int tipPer) {
+        this.tipPer = tipPer;
+    }
 
     public int getIdPer() {
         return idPer;
@@ -53,14 +61,6 @@ public class Personal {
         this.dirPer = dirPer;
     }
 
-    public String getTipPer() {
-        return tipPer;
-    }
-
-    public void setTipPer(String tipPer) {
-        this.tipPer = tipPer;
-    }
-
     public String getSexPer() {
         return sexPer;
     }
@@ -92,7 +92,5 @@ public class Personal {
     public void setIdUbi(String idUbi) {
         this.idUbi = idUbi;
     }
-    
-    
-    
+
 }
