@@ -587,7 +587,7 @@ public class ClienteView extends javax.swing.JPanel {
     }//GEN-LAST:event_btnImprimirActionPerformed
 
     private void btnImprimir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimir1ActionPerformed
-        try {
+        try { 
             JasperPrint reportelleno = ReportGenerator.generarReporteSimpleCliente();
             //            JasperExportManager.exportReportToPdfFile(reportelleno, "ReporteProveedor.pdf");
             JasperViewer viewer = new JasperViewer(reportelleno, false);
