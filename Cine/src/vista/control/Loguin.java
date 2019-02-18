@@ -1,6 +1,7 @@
 package vista.control;
 
 import controller.PersonalC;
+import dao.PersonalImpl;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -118,17 +119,8 @@ public class Loguin extends javax.swing.JFrame {
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         PersonalC personalC = new PersonalC();
-
-        String usuario = txtUsuario.getText().toUpperCase();
-        String pass = txtClave.getText();
         try {
-            if (personalC.loguin() == 1) {
-                Principal principal = new Principal();
-                principal.setVisible(true);
-                this.setVisible(false);
-            } else {
-                JOptionPane.showMessageDialog(null, "Usuario y/o contraseña incorrecta");
-            }
+            personalC.loguin();
         } catch (Exception ex) {
             Logger.getLogger(Loguin.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -176,7 +168,7 @@ public class Loguin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField txtClave;
-    private javax.swing.JTextField txtUsuario;
+    public static javax.swing.JPasswordField txtClave;
+    public static javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

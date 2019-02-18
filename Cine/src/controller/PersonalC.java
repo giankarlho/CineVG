@@ -3,7 +3,10 @@ package controller;
 import dao.PersonalImpl;
 import java.io.Serializable;
 import java.util.List;
+import javax.swing.JOptionPane;
 import model.Personal;
+import vista.control.Loguin;
+import vista.control.Principal;
 import vistas.panels.PersonalView;
 
 public class PersonalC implements Serializable {
@@ -13,22 +16,33 @@ public class PersonalC implements Serializable {
     PersonalImpl dao;
 
     public PersonalC() {
-        dao = new PersonalImpl();
         personal = new Personal();
     }
 
-    public int loguin() throws Exception{        
-        Personal per ;
-        per = dao.listarLogin("user","1234");
-        if (per.getUsuPer()==null){
-            return 1;
-        }else{
-            return 0;
+    public void loguin() throws Exception {
+        dao = new PersonalImpl();
+        Personal per;
+        per = dao.listarLogin(Loguin.txtUsuario.getText().toUpperCase().trim(), Loguin.txtClave.getText().toUpperCase().trim());
+//        per = dao.listarLogin("user", "1234");
+        if (per.getNomPer() == null) {
+            JOptionPane.showMessageDialog(null, "Usuario y/o contraseña incorrecta");
+        } else {
+            Principal principal = new Principal();
+            principal.setVisible(true);
+            Principal.lblUserApe.setText(per.getApePer());
+            Principal.lblUserNom.setText(per.getNomPer());
+            if (per.getTipPer()==2){ // no es administrador
+                Principal.btnPersonal.setEnabled(false);
+                Principal.btnSala.setEnabled(false);
+            }
+            Loguin loguin = new Loguin();
+            loguin.setVisible(false);
         }
     }
-            
+
     public void registrarPersonal() throws Exception {
         try {
+            dao = new PersonalImpl();
             dao.registrar(personal);
         } catch (Exception e) {
             System.out.println("Error en registrar Personal " + e.getMessage());

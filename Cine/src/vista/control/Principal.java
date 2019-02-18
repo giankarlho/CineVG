@@ -95,6 +95,10 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Mega_GamesPack_090_2.png"))); // NOI18N
 
+        lblUserNom.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblUserApe.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         btnTablero.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnTablero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/tablero_32x32.png"))); // NOI18N
         btnTablero.setText("Tablero");
@@ -379,9 +383,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnMin;
     private javax.swing.JButton btnPelicula;
-    private javax.swing.JButton btnPersonal;
+    public static javax.swing.JButton btnPersonal;
     private javax.swing.JButton btnReportes;
-    private javax.swing.JButton btnSala;
+    public static javax.swing.JButton btnSala;
     private javax.swing.JButton btnSesion;
     private javax.swing.JButton btnTablero;
     private javax.swing.JButton btnVenta;
@@ -391,7 +395,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jpMenu;
     private javax.swing.JPanel jpPrincipal;
     private javax.swing.JPanel jpTitulo;
-    private javax.swing.JLabel lblUserApe;
-    private javax.swing.JLabel lblUserNom;
+    public static javax.swing.JLabel lblUserApe;
+    public static javax.swing.JLabel lblUserNom;
     // End of variables declaration//GEN-END:variables
 }

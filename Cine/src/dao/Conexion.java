@@ -25,7 +25,7 @@ public class Conexion {
             return cnx;
         }
         try {
-            String url = "jdbc:sqlserver://(localhost);databaseName=CineVG";
+            String url = "jdbc:sqlserver://192.168.8.10;databaseName=CineVG";
 //            String url = "jdbc:oracle:thin:@localhost:1521:XE";
 //            String url = "jdbc:mysql://localhost:3306/bdhospital";
             String user = "sa";
