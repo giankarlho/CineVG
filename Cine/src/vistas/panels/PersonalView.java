@@ -11,13 +11,14 @@ import model.Ubigeo;
 
 public class PersonalView extends javax.swing.JPanel {
 
-    UbigeoD ubiDAO ;
+    UbigeoD ubiDAO;
     public static DefaultTableModel modeloTabla;
     public int tipo = 1; //2: nombre , 3: apellido, 1: todos
-    public String dato,sexo; // contenido del filtro    
+    public String dato, sexo; // contenido del filtro    
     PersonalImpl dao;
     public int codigoPersonal, tipoPersonal;
-    
+    public int nivelPersonal;
+
     public PersonalView() throws Exception {
         initComponents();
         ubiDAO = new UbigeoD();
@@ -433,6 +434,11 @@ public class PersonalView extends javax.swing.JPanel {
 
         jcTipo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jcTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Administrador", "Operador" }));
+        jcTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcTipoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout plDatosLayout = new javax.swing.GroupLayout(plDatos);
         plDatos.setLayout(plDatosLayout);
@@ -801,7 +807,10 @@ public class PersonalView extends javax.swing.JPanel {
     }//GEN-LAST:event_txtDniKeyTyped
 
     private void jrSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrSexoActionPerformed
-        sexo = "M";
+        if (jrSexo.isSelected() == true) {
+            sexo = "M";
+            System.out.println(sexo);
+        }
     }//GEN-LAST:event_jrSexoActionPerformed
 
     private void jrSexo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrSexo1ActionPerformed
@@ -816,7 +825,6 @@ public class PersonalView extends javax.swing.JPanel {
         try {
             if (evt.getStateChange() == ItemEvent.SELECTED) {
                 ubiDAO.listar_prov(cboProv, cboDpto.getSelectedItem().toString());
-
             }
         } catch (Exception ex) {
             ex.getMessage();
@@ -831,7 +839,6 @@ public class PersonalView extends javax.swing.JPanel {
                 String id = ubigeo.getIdUbi();
                 idubi = Integer.parseInt(id);
                 txtUbigeo.setText(String.valueOf(idubi));
-
             }
         } catch (Exception ex) {
             ex.getMessage();
@@ -848,7 +855,7 @@ public class PersonalView extends javax.swing.JPanel {
     }//GEN-LAST:event_cboProvItemStateChanged
 
     private void cboProvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboProvActionPerformed
-        // TODO add your handling code here:
+ 
     }//GEN-LAST:event_cboProvActionPerformed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
@@ -881,7 +888,7 @@ public class PersonalView extends javax.swing.JPanel {
                 personalC.variables();
                 personalC.modificarPersonal();
                 cargar_Tabla();
-                JOptionPane.showMessageDialog(null,"Registro modificado");
+                JOptionPane.showMessageDialog(null, "Registro modificado");
             }
 
         } catch (Exception e) {
@@ -953,7 +960,15 @@ public class PersonalView extends javax.swing.JPanel {
         jpCRUD.setVisible(true);
         jpListado.setVisible(false);
     }//GEN-LAST:event_btnNuevoRegActionPerformed
-    
+
+    private void jcTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcTipoActionPerformed
+        if (jcTipo.getSelectedItem().toString() == "Administrador") {
+            nivelPersonal = 1;
+        } else {
+            nivelPersonal = 2;
+        }
+    }//GEN-LAST:event_jcTipoActionPerformed
+
     private void cargar_Tabla() throws Exception {
         String columna[] = new String[]{"Código", "Nombre", "Apellido", "Nacimiento"};
         modeloTabla = new DefaultTableModel(null, columna);

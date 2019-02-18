@@ -1,23 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package vistas.panels;
 
 import controller.PeliculaC;
 import dao.PeliculaImpl;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Valentin
- */
+
 public class PeliculaView extends javax.swing.JPanel {
 
-    /**
-     * Creates new form Pelicula
-     */
+
     
     public static DefaultTableModel modeloTabla;
     public int tipo = 1; //2: nombre , 3: apellido, 1: todos
@@ -47,6 +37,7 @@ public class PeliculaView extends javax.swing.JPanel {
     private void initComponents() {
 
         btnGroupPelicula = new javax.swing.ButtonGroup();
+        btnTipoPelicula = new javax.swing.ButtonGroup();
         jpCRUD = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -67,6 +58,10 @@ public class PeliculaView extends javax.swing.JPanel {
         txtIdioma = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         txtClasificacion = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jrSubtitulada = new javax.swing.JRadioButton();
+        jrDoblada = new javax.swing.JRadioButton();
         jpListado = new javax.swing.JPanel();
         jrGenero = new javax.swing.JRadioButton();
         jrTipo = new javax.swing.JRadioButton();
@@ -162,6 +157,15 @@ public class PeliculaView extends javax.swing.JPanel {
 
         jLabel8.setText("Clasificación de Pelicula");
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Animadas", "Comedia", "Terror", "Drama", "Acción" }));
+
+        jDateChooser1.setDateFormatString("hh:mm:ss");
+        jDateChooser1.setMaxSelectableDate(new java.util.Date(253370786495000L));
+
+        jrSubtitulada.setText("Subtitulada");
+
+        jrDoblada.setText("Doblada");
+
         javax.swing.GroupLayout jpCRUDLayout = new javax.swing.GroupLayout(jpCRUD);
         jpCRUD.setLayout(jpCRUDLayout);
         jpCRUDLayout.setHorizontalGroup(
@@ -183,17 +187,28 @@ public class PeliculaView extends javax.swing.JPanel {
                                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(40, 40, 40)
                                         .addGroup(jpCRUDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jpCRUDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jpCRUDLayout.createSequentialGroup()
-                                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(40, 40, 40)
-                                            .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jpCRUDLayout.createSequentialGroup()
-                                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(40, 40, 40)
-                                            .addComponent(txtDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(jpCRUDLayout.createSequentialGroup()
+                                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jpCRUDLayout.createSequentialGroup()
+                                                .addComponent(txtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(jpCRUDLayout.createSequentialGroup()
+                                        .addGroup(jpCRUDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jpCRUDLayout.createSequentialGroup()
+                                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(40, 40, 40)
+                                                .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jpCRUDLayout.createSequentialGroup()
+                                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(40, 40, 40)
+                                                .addComponent(txtDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jrSubtitulada)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jrDoblada))
                                     .addGroup(jpCRUDLayout.createSequentialGroup()
                                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(40, 40, 40)
@@ -205,7 +220,7 @@ public class PeliculaView extends javax.swing.JPanel {
                             .addGroup(jpCRUDLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(jLabel6)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)))
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jpCRUDLayout.setVerticalGroup(
@@ -217,20 +232,25 @@ public class PeliculaView extends javax.swing.JPanel {
                 .addGap(55, 55, 55)
                 .addGroup(jpCRUDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel1)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
-                .addGroup(jpCRUDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                .addGroup(jpCRUDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpCRUDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2))
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(jpCRUDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addGap(27, 27, 27)
+                .addGap(26, 26, 26)
                 .addGroup(jpCRUDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(30, 30, 30)
+                    .addComponent(jLabel5)
+                    .addComponent(jrSubtitulada)
+                    .addComponent(jrDoblada))
+                .addGap(28, 28, 28)
                 .addGroup(jpCRUDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtIdioma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
@@ -441,9 +461,12 @@ public class PeliculaView extends javax.swing.JPanel {
     private javax.swing.JButton btnListado;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnNuevo;
+    private javax.swing.ButtonGroup btnTipoPelicula;
     public static javax.swing.JCheckBox chkTodos;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -457,7 +480,9 @@ public class PeliculaView extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel jpCRUD;
     private javax.swing.JPanel jpListado;
+    private javax.swing.JRadioButton jrDoblada;
     public static javax.swing.JRadioButton jrGenero;
+    private javax.swing.JRadioButton jrSubtitulada;
     public static javax.swing.JRadioButton jrTipo;
     public static javax.swing.JTable tblPelicula;
     public static javax.swing.JTextField txtClasificacion;
