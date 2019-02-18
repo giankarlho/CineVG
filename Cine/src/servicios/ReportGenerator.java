@@ -12,7 +12,7 @@ public class ReportGenerator extends Conexion {
     public static final String REPORTE_SIMPLE_PERSONAL = "ListPersonal.jasper";
     public static final String REPORTE_SIMPLE_PELICULA = "ListPelicula.jasper";
 
-    public static JasperPrint generarReporteSimplePaciente() throws JRException, ClassNotFoundException {
+    public static JasperPrint generarReporteSimpleCliente() throws JRException, ClassNotFoundException {
         try {
             JasperPrint reporteLleno = JasperFillManager.fillReport(REPORTE_SIMPLE_CLIENTE, new HashMap(), conectar());
             return reporteLleno;

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ListClientes" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b5eb4d73-55d2-4542-a67a-48e46971e17e">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="IkNsaWVudGUiIEFTICw4Nyw3Miw3N2U1ZDM5Mi03MDZiLTQyNzYtOTMxYy04NjE0MGM3OTU3OTU7"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SQLServer_DA"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT "Cliente"."idCli",
+	"Cliente"."nacCli",
+	"Cliente"."apeCli",
+	"Cliente"."nomCli"
+FROM "Cliente"]]>
+	</queryString>
+	<field name="idCli" class="java.lang.Integer"/>
+	<field name="nacCli" class="java.sql.Date"/>
+	<field name="apeCli" class="java.lang.String"/>
+	<field name="nomCli" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="86" splitType="Stretch">
+			<staticText>
+				<reportElement x="227" y="30" width="100" height="30" uuid="de954ec3-a807-4c65-a299-e3d207613939"/>
+				<text><![CDATA[Static Text]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="25" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement x="144" y="5" width="138" height="20" uuid="72d1848f-d1a7-4611-b94d-cb4506e9e596"/>
+				<text><![CDATA[Nombre y Apellido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="5" width="141" height="20" uuid="4b4656ea-a054-4aeb-b3ed-b3b205125e5b"/>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="5" width="138" height="20" uuid="4f182ba6-7dcd-4e02-8774-821025de94f2"/>
+				<text><![CDATA[Nacimiento]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="4" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="2" y="0" width="141" height="17" uuid="695ef475-299c-4bcd-9173-a648447a3673"/>
+				<textFieldExpression><![CDATA[$F{idCli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="143" y="0" width="269" height="17" uuid="5fd7ac4c-6287-4c6f-9fff-08bd28ae4b6c"/>
+				<textFieldExpression><![CDATA[$F{nomCli} + " " +  $F{apeCli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="419" y="0" width="138" height="17" uuid="d803ccef-5c8a-49d9-956f-6a630ce34c00"/>
+				<textFieldExpression><![CDATA[$F{nacCli}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+</jasperReport>

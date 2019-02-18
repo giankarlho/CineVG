@@ -6,6 +6,9 @@ import java.sql.Date;
 import javax.swing.JOptionPane;
 
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
+import servicios.ReportGenerator;
 
 public class ClienteView extends javax.swing.JPanel {
 
@@ -584,7 +587,15 @@ public class ClienteView extends javax.swing.JPanel {
     }//GEN-LAST:event_btnImprimirActionPerformed
 
     private void btnImprimir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimir1ActionPerformed
-        // TODO add your handling code here:
+        try {
+            JasperPrint reportelleno = ReportGenerator.generarReporteSimpleCliente();
+            //            JasperExportManager.exportReportToPdfFile(reportelleno, "ReporteProveedor.pdf");
+            JasperViewer viewer = new JasperViewer(reportelleno, false);
+            viewer.setVisible(true);
+        } catch (Exception e) {
+            e.getMessage();
+            System.out.println("bntImprimir " + e.getMessage());
+        }
     }//GEN-LAST:event_btnImprimir1ActionPerformed
 
 
