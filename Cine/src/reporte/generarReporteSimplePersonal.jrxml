@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="generarReporteSimplePersonal" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4b411957-98e2-4a55-91f2-cd2580943196">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[IlBlcnNvbmFsIiBBUyAsMTM0LDMyLGM5YWY3MDEwLTgxMzYtNGM1Zi04YzVhLTkyMzQxNTI1ZmQ5
+Zjs=]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Alexander.xml"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT "Personal"."nomPer",
+	"Personal"."idPer",
+	"Personal"."apePer",
+	"Personal"."dniPer",
+	"Personal"."dirPer",
+	"Personal"."tipPer",
+	"Personal"."sexPer",
+	"Personal"."usuPer",
+	"Personal"."pwdPer",
+	"Personal"."ubiPer"
+FROM "Personal"]]>
+	</queryString>
+	<field name="nomPer" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nomPer"/>
+	</field>
+	<field name="idPer" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="idPer"/>
+	</field>
+	<field name="apePer" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="apePer"/>
+	</field>
+	<field name="dniPer" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dniPer"/>
+	</field>
+	<field name="dirPer" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dirPer"/>
+	</field>
+	<field name="tipPer" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="tipPer"/>
+	</field>
+	<field name="sexPer" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="sexPer"/>
+	</field>
+	<field name="usuPer" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="usuPer"/>
+	</field>
+	<field name="pwdPer" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="pwdPer"/>
+	</field>
+	<field name="ubiPer" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ubiPer"/>
+	</field>
+	<group name="nomPer">
+		<groupExpression><![CDATA[$F{nomPer}]]></groupExpression>
+	</group>
+	<group name="idPer">
+		<groupExpression><![CDATA[$F{idPer}]]></groupExpression>
+	</group>
+	<group name="apePer">
+		<groupExpression><![CDATA[$F{apePer}]]></groupExpression>
+	</group>
+	<group name="dniPer">
+		<groupExpression><![CDATA[$F{dniPer}]]></groupExpression>
+	</group>
+	<group name="dirPer">
+		<groupExpression><![CDATA[$F{dirPer}]]></groupExpression>
+	</group>
+	<group name="tipPer">
+		<groupExpression><![CDATA[$F{tipPer}]]></groupExpression>
+	</group>
+	<group name="sexPer">
+		<groupExpression><![CDATA[$F{sexPer}]]></groupExpression>
+	</group>
+	<group name="usuPer">
+		<groupExpression><![CDATA[$F{usuPer}]]></groupExpression>
+	</group>
+	<group name="pwdPer">
+		<groupExpression><![CDATA[$F{pwdPer}]]></groupExpression>
+	</group>
+	<group name="ubiPer">
+		<groupExpression><![CDATA[$F{ubiPer}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="40" width="100" height="30" uuid="99f7d5ee-625c-4d05-812e-af66eca8d17b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c565147b-332b-4645-8696-4ba869617610"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nomPer}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="10" width="100" height="30" uuid="b6c8124c-4d84-4e75-9753-e71591524795">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c565147b-332b-4645-8696-4ba869617610"/>
+				</reportElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="40" width="100" height="30" uuid="7c0a62d8-e266-4114-9027-140147d1a77d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d402b32b-21a0-4516-aaa5-f76e8cd1982c"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{apePer}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="140" y="9" width="100" height="30" uuid="ffa6f4df-c6a3-4092-bf41-b5ca3f9f9ca2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d402b32b-21a0-4516-aaa5-f76e8cd1982c"/>
+				</reportElement>
+				<text><![CDATA[Apellido]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="40" width="100" height="30" uuid="08ad900d-2889-4064-bc64-68f4563c49cf">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="97b6fea6-4c01-4537-b2b3-a173bbdd8e6a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{dirPer}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="9" width="100" height="30" uuid="a472475e-da19-43d1-9adc-f505a35ac609">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="97b6fea6-4c01-4537-b2b3-a173bbdd8e6a"/>
+				</reportElement>
+				<text><![CDATA[Direccion]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
