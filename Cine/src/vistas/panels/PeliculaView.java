@@ -23,7 +23,7 @@ public class PeliculaView extends javax.swing.JPanel {
     }
     
     private void cargar_Tabla() throws Exception {
-        String columna[] = new String[]{"Código", "Nombre", "Genero", "Tipo","Idioma"};
+        String columna[] = new String[]{"Código", "Nombre", "Genero", "Tipo"};
         modeloTabla = new DefaultTableModel(null, columna);
         dao = new PeliculaImpl();
         dao.buscar(modeloTabla, tipo, dato);
@@ -110,6 +110,11 @@ public class PeliculaView extends javax.swing.JPanel {
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/reportar(2).png"))); // NOI18N
         jButton3.setText("Modificar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         btnListado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/reportar(2).png"))); // NOI18N
         btnListado.setText("Listado");
@@ -320,7 +325,7 @@ public class PeliculaView extends javax.swing.JPanel {
                 .addGroup(jpCRUDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rbQuinto, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         add(jpCRUD, "card2");
@@ -574,6 +579,23 @@ public class PeliculaView extends javax.swing.JPanel {
             System.out.println("Error en el btnGuardar" + ex.getMessage());
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        try {
+            int opcion = JOptionPane.showConfirmDialog(null, "Deseas modificar? ", "Modificación del registro", JOptionPane.OK_OPTION);
+            if (opcion == JOptionPane.OK_OPTION) {
+                PeliculaC clienteC = new PeliculaC();
+                clienteC.getPelicula().setIdPeli(codigoPelicula);
+                clienteC.variables();
+                clienteC.modificarPelicula();
+                cargar_Tabla();
+                JOptionPane.showMessageDialog(null,"Registro modificado");
+            }
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

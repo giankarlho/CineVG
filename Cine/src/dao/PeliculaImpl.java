@@ -1,6 +1,5 @@
 package dao;
 
-import static dao.ClienteImpl.cantidad;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -9,18 +8,20 @@ import model.Pelicula;
 
 
 public class PeliculaImpl extends Conexion implements IPelicula {
+    
+    public static int cantidad;
 
     @Override
     public void registrar(Pelicula pelicula) throws Exception {
         try {
-            String sql = "INSERT INTO PELICULA (GENPELI,IDIPELI,DURPELI,TIPPELI,CLAPELI,NOMPELI) VALUES (?,?,?,?,?,?)";
+            String sql = "INSERT INTO PELICULA (NOMPELI,GENPELI,CLAPELI,TIPPELI,IDIPELI,DURPELI) VALUES (?,?,?,?,?,?)";
             PreparedStatement ps = this.conectar().prepareStatement(sql);
-            ps.setString(1, pelicula.getGenPeli());
-            ps.setString(2, pelicula.getIdiPeli());
-            ps.setString(3, pelicula.getDurPeli());
+            ps.setString(1, pelicula.getNomPeli());
+            ps.setString(2, pelicula.getGenPeli());
+            ps.setString(3, pelicula.getClaPeli());
             ps.setString(4, pelicula.getTipPeli());
-            ps.setString(5, pelicula.getClaPeli());
-            ps.setString(6, pelicula.getNomPeli());
+            ps.setString(5, pelicula.getIdiPeli());
+            ps.setString(6, pelicula.getDurPeli());
             ps.executeUpdate();
             ps.close();
         } catch (Exception e) {
