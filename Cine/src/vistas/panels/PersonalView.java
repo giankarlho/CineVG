@@ -536,6 +536,11 @@ public class PersonalView extends javax.swing.JPanel {
                 cboDptoItemStateChanged(evt);
             }
         });
+        cboDpto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboDptoActionPerformed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setText("Distrito");
@@ -968,6 +973,10 @@ public class PersonalView extends javax.swing.JPanel {
             nivelPersonal = 2;
         }
     }//GEN-LAST:event_jcTipoActionPerformed
+
+    private void cboDptoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboDptoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboDptoActionPerformed
 
     private void cargar_Tabla() throws Exception {
         String columna[] = new String[]{"Código", "Nombre", "Apellido", "Nacimiento"};

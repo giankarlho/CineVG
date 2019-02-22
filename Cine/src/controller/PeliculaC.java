@@ -47,21 +47,45 @@ public class PeliculaC {
     }
 
     public void variables() {
-        pelicula.setClaPeli(PeliculaView.txtClasificacion.getText());
         pelicula.setDurPeli(PeliculaView.txtDuracion.getText());
-        pelicula.setGenPeli(PeliculaView.txtGenero.getText());
-        pelicula.setIdiPeli(PeliculaView.txtIdioma.getText());
-        pelicula.setNomPeli(PeliculaView.txtNombre.getText());
-        pelicula.setTipPeli(PeliculaView.txtTipo.getText());
+        pelicula.setGenPeli(PeliculaView.cbGenero.getSelectedItem().toString());
+        pelicula.setIdiPeli(PeliculaView.cbIdioma.getSelectedItem().toString());
+        pelicula.setNomPeli(PeliculaView.txtNombre1.getText());
+        
+        
+        if(PeliculaView.rbDoblada.isSelected() == true ){
+           pelicula.setTipPeli("D");          
+        }
+        else if(PeliculaView.rbSubtitulada.isSelected() == true)
+        {
+            pelicula.setTipPeli("S");
+        }
+        
+        
+        if(PeliculaView.rbPrimero.isSelected() == true){
+            pelicula.setClaPeli("R");
+        }
+        else if(PeliculaView.rbSegundo.isSelected() == true)
+        {
+            pelicula.setClaPeli("PG");
+        }
+        else if(PeliculaView.rbTercero.isSelected() == true)
+        {
+            pelicula.setClaPeli("14A");
+        }
+        else if(PeliculaView.rbCuarto.isSelected() == true)
+        {
+            pelicula.setClaPeli("18A");
+        }
+        else if(PeliculaView.rbQuinto.isSelected() == true)
+        {
+            pelicula.setClaPeli("G");
+        }
     }
 
     public void limpiar() {
-        PeliculaView.txtClasificacion.setText("");
         PeliculaView.txtDuracion.setText("");
-        PeliculaView.txtGenero.setText("");
-        PeliculaView.txtIdioma.setText("");
-        PeliculaView.txtNombre.setText("");
-        PeliculaView.txtTipo.setText("");
+        PeliculaView.txtNombre1.setText("");
     }
 
     public Pelicula getPelicula() {
