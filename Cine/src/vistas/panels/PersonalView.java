@@ -917,7 +917,15 @@ public class PersonalView extends javax.swing.JPanel {
     }//GEN-LAST:event_btnGuardar1ActionPerformed
 
     private void btnImprimir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimir1ActionPerformed
-        // TODO add your handling code here:
+         try { 
+            JasperPrint reportelleno = ReportGenerator.generarReporteSimplePersonal();
+            //            JasperExportManager.exportReportToPdfFile(reportelleno, "ReporteProveedor.pdf");
+            JasperViewer viewer = new JasperViewer(reportelleno, false);
+            viewer.setVisible(true);
+        } catch (Exception e) {
+            e.getMessage();
+            System.out.println("bntImprimir " + e.getMessage());
+        }
     }//GEN-LAST:event_btnImprimir1ActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed

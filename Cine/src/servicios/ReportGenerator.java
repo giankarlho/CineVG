@@ -9,7 +9,7 @@ import net.sf.jasperreports.engine.JasperPrint;
 public class ReportGenerator extends Conexion {
 
     public static final String REPORTE_SIMPLE_CLIENTE = "ListClientes.jasper";
-    public static final String REPORTE_SIMPLE_PERSONAL = "ListPersonal.jasper";
+    public static final String REPORTE_SIMPLE_PERSONAL = "generarReporteSimplePersonal.jasper";
     public static final String REPORTE_SIMPLE_PELICULA = "ListPelicula.jasper";
 
     public static JasperPrint generarReporteSimpleCliente() throws JRException, ClassNotFoundException {
