@@ -52,7 +52,7 @@ public class PeliculaC {
         pelicula.setIdiPeli(PeliculaView.cbIdioma.getSelectedItem().toString());
         pelicula.setNomPeli(PeliculaView.txtNombre1.getText());
         
-        
+        //TIPO
         if(PeliculaView.rbDoblada.isSelected() == true ){
            pelicula.setTipPeli("D");          
         }
@@ -61,7 +61,7 @@ public class PeliculaC {
             pelicula.setTipPeli("S");
         }
         
-        
+        //CLASIFICACION        
         if(PeliculaView.rbPrimero.isSelected() == true){
             pelicula.setClaPeli("R");
         }
