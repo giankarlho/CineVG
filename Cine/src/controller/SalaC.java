@@ -1,80 +1,62 @@
-
 package controller;
 
 import java.io.Serializable;
-import dao.SalaD;
+import dao.SalaImpl;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import model.Sala;
+import vistas.panels.SalaView;
 
-public class SalaC implements Serializable{
-    
-    private Sala sala = new Sala();
-    private Sala selecteSala;
-    private List<Sala> listSala;
-    private List<Sala> listarPorSala;
-    
+public class SalaC implements Serializable {
 
-    @PostConstruct
-    public void iniciar() {
+    Sala sala;
+    List<Sala> lstSala;
+    SalaImpl dao;
 
-        try {
-            ListarSala();
-        } catch (Exception e) {
-        }
-    }
-
-    private void ListarSala() throws Exception {
-        SalaD dao;
-        try {
-            dao = new SalaD();
-            listSala = dao.listarSala();
-        } catch (Exception e) {
-            throw e;
-        }
-    }
-
-    public void guardarSala() throws Exception {
-        SalaD dao;
-        try {
-            dao = new SalaD();
-            dao.guardarSala(sala);
-            ListarSala();           
-            limpiarSala();
-        } catch (Exception e) {
-           
-        }
-    }
-
-    public void modificarSala() {
-        SalaD dao;
-        try {
-            dao = new SalaD();
-            dao.modificarSala(selecteSala);
-            ListarSala();          
-            limpiarSala();
-        } catch (Exception e) {
-        }
-    }
-
-    private void limpiarSala() {
+    public SalaC() {
         sala = new Sala();
+        dao = new SalaImpl();
+    }
+
+    public void registrarSala() throws Exception {
+        try {
+            dao.registrar(sala);
+        } catch (Exception e) {
+            System.out.println("Error en registrarCliente SalaC " + e.getMessage());
+        }
     }
 
     public void eliminarSala() throws Exception {
-        SalaD dao;
         try {
-            dao = new SalaD();
-            dao.eliminarSala(selecteSala);
-            lstEmpresa();
+            dao.eliminar(sala);
         } catch (Exception e) {
             throw e;
         }
-     }
+    }
 
-  
+    public void modificarSala() throws Exception {
+        try {
+            dao.modificar(sala);
+        } catch (Exception e) {
+            throw e;
+        }
+    }
 
-    public Sala getSala() {
+    public void variables() {
+        try {
+            sala.setNumSala(Integer.parseInt(SalaView.txtNum.getText()));
+            sala.setCapSala(Integer.parseInt(SalaView.txtCap.getText()));
+        } catch (Exception e) {
+            System.out.println("Error en variables Cliente " + e.getMessage());
+        }
+    }
+
+    public void limpiar() {
+        SalaView.txtNum.setText("");
+        SalaView.txtCap.setText("");
+    }
+    
+        public Sala getSala() {
         return sala;
     }
 
@@ -82,35 +64,20 @@ public class SalaC implements Serializable{
         this.sala = sala;
     }
 
-    public Sala getSelecteSala() {
-        return selecteSala;
+    public List<Sala> getLstSala() {
+        return lstSala;
     }
 
-    public void setSelecteSala(Sala selecteSala) {
-        this.selecteSala = selecteSala;
+    public void setLstSala(List<Sala> lstSala) {
+        this.lstSala = lstSala;
     }
 
-    public List<Sala> getListSala() {
-        return listSala;
+    public SalaImpl getDao() {
+        return dao;
     }
 
-    public void setListSala(List<Sala> listSala) {
-        this.listSala = listSala;
+    public void setDao(SalaImpl dao) {
+        this.dao = dao;
     }
 
-    public List<Sala> getListarPorSala() {
-        return listarPorSala;
-    }
-
-    public void setListarPorSala(List<Sala> listarPorSala) {
-        this.listarPorSala = listarPorSala;
-    }
-
-    private void lstEmpresa() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-   
- }
- 
-
+}

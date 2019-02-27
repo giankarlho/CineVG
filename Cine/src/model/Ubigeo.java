@@ -1,14 +1,11 @@
 package model;
 
 public class Ubigeo {
+
     private String idUbi;
     private String dptoUbi;
     private String provUbi;
     private String distUbi;
-
-    public String getIdUbi() {
-        return idUbi;
-    }
 
     public Ubigeo() { // para instanciar un objeto
     }
@@ -17,7 +14,18 @@ public class Ubigeo {
         this.idUbi = idUbi;
         this.distUbi = distUbi;
     }
-      
+
+    // Para cargar los datos al combo: numubi y distubi
+    @Override
+    public String toString() {
+        return "" + distUbi;
+    }
+
+//    @Override
+//    public int hashCode() {
+//        int hash = 5;
+//        return hash;
+//    }
 
     public void setIdUbi(String idUbi) {
         this.idUbi = idUbi;
@@ -46,6 +54,8 @@ public class Ubigeo {
     public void setDistUbi(String distUbi) {
         this.distUbi = distUbi;
     }
-    
-    
+
+    public String getIdUbi() {
+        return idUbi;
+    }
 }

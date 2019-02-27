@@ -6,9 +6,8 @@ import java.sql.Statement;
 import javax.swing.table.DefaultTableModel;
 import model.Pelicula;
 
-
 public class PeliculaImpl extends Conexion implements IPelicula {
-    
+
     public static int cantidad;
 
     @Override
@@ -32,7 +31,6 @@ public class PeliculaImpl extends Conexion implements IPelicula {
     @Override
     public void modificar(Pelicula pelicula) throws Exception {
         try {
-            this.conectar();
             String sql = "UPDATE PELICULA SET GENPELI = ? , IDIPELI = ?, DURPELI = ?, TIPPELI = ?, CLAPELI = ?, NOMPELI = ?  WHERE IDPELI = ?";
             PreparedStatement ps = this.conectar().prepareStatement(sql);
             ps.setString(1, pelicula.getGenPeli());
@@ -51,7 +49,6 @@ public class PeliculaImpl extends Conexion implements IPelicula {
     @Override
     public void eliminar(Pelicula pelicula) throws Exception {
         try {
-            this.conectar();
             String sql = "DELETE FROM PELICULA WHERE IDPELI = ?";
             PreparedStatement ps = this.conectar().prepareStatement(sql);
             ps.setInt(1, pelicula.getIdPeli());
@@ -59,10 +56,10 @@ public class PeliculaImpl extends Conexion implements IPelicula {
         } catch (Exception e) {
             throw e;
         }
-   }
-    
+    }
+
     public void buscar(DefaultTableModel modelo, Integer tipo, String dato) throws Exception {
-        // 1: todos, 2: nombre, 3: ruc, 4: apellido
+        // 1: todos, 2: nombre, 3: ruc
         String sql = "";
         switch (tipo) {
             case 1:
@@ -73,7 +70,7 @@ public class PeliculaImpl extends Conexion implements IPelicula {
                 break;
             case 3:
                 sql = "select * from pelicula where tippeli like '%" + dato + "%'";
-                break;            
+                break;
         }
         String datos[] = new String[4];
         Statement st = this.conectar().createStatement();
@@ -87,7 +84,6 @@ public class PeliculaImpl extends Conexion implements IPelicula {
         }
         rs.close();
         st.close();
-    } 
+    }
 
-    
 }

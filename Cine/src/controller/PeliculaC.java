@@ -21,7 +21,7 @@ public class PeliculaC {
         try {
             dao.registrar(pelicula);
         } catch (Exception e) {
-            System.out.println("Error en registrarCliente ClienteC " + e.getMessage());
+            System.out.println("Error en registrar Pelicula PeliculaC " + e.getMessage());
         }
     }
 

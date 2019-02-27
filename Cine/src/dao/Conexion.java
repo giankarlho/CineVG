@@ -12,29 +12,20 @@ public class Conexion {
     public static Connection cnx = null;
 
     public static Connection conectar() throws Exception {
-//        InputStream inputStream
-//                = Conexion.class.getClassLoader().getResourceAsStream("propiedades/db.properties");
-//        Properties properties = new Properties();
-//        try {
-//            properties.load(inputStream);
-//            String user = properties.getProperty("user");
-//            String pwd = properties.getProperty("pwd");
-//            String url = properties.getProperty("url");
-//            String driver = properties.getProperty("driver");
         if (cnx != null) {
             return cnx;
         }
+        InputStream inputStream
+                = Conexion.class.getClassLoader().getResourceAsStream("propiedades/db.properties");
+        Properties properties = new Properties();
         try {
-//            String url = "jdbc:sqlserver://192.168.8.10;databaseName=CineVG";
-            String url = "jdbc:oracle:thin:@localhost:1521:XE";
-//            String url = "jdbc:mysql://localhost:3306/bdhospital";
-            String user = "CINE";
-            String password = "vallegrande2019";
-//            String driver = "com.mysql.jdbc.Driver";
-//            String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-            String driver = "oracle.jdbc.OracleDriver";
+            properties.load(inputStream);
+            String user = properties.getProperty("user");
+            String pwd = properties.getProperty("pwd");
+            String url = properties.getProperty("url");
+            String driver = properties.getProperty("driver");
             Class.forName(driver).newInstance();
-            cnx = DriverManager.getConnection(url, user, password);
+            cnx = DriverManager.getConnection(url, user, pwd);
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error en el: " + ex.getMessage());
         }
@@ -48,11 +39,11 @@ public class Conexion {
     }
 
     public static void main(String[] args) throws Exception {
-       conectar();
-       if (cnx != null) {
+        conectar();
+        if (cnx != null) {
             System.out.println("abierta");
-        }else{
-           System.out.println("cerrada");
-       }
+        } else {
+            System.out.println("cerrada");
+        }
     }
 }
