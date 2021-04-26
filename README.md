@@ -1,5 +1,7 @@
-# CineVG
-creación de un sistema de administración de un cine con Java SE y Microsoft SQL Server
+
+<h1>CineVG</h1>
+Este es un modelo de readme para las clases de POO, TP1 y TP2 del IES Valle Grande
+
 ### Este sistema es un ejemplo de aplicación Web con Java SE y mucho más
 
 ### Objetivos Generales
