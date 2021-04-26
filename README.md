@@ -1,6 +1,6 @@
 
 <h1>CineVG</h1>
-Este es un modelo de readme para las clases de POO, TP1 y TP2 del [IES Valle Grande](https://www.vallegrande.edu.pe)
+Este es un modelo de readme para las clases de POO, TP1 y TP2 del IES Valle Grande:https://www.vallegrande.edu.pe
 
 ### Este sistema es un ejemplo de aplicación Web con Java SE y mucho más
 
